@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Muppidi Hemakesh Reddy - Portfolio</title>
+  <title>M. Hemakesh Reddy - Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -51,6 +51,21 @@
       padding-bottom: 5px;
     }
 
+    h3 {
+      color: #2c3e50;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-top: 0;
+    }
+
+    .contact a {
+      color: #2c3e50;
+    }
+
     .gallery img {
       width: 150px;
       height: 100px;
@@ -70,53 +85,102 @@
 <body>
 
   <header>
-    <h1>Muppidi Hemakesh Reddy</h1>
-    
+    <h1>M. Hemakesh Reddy</h1>
+    <p>Software Engineer</p>
     <nav>
       <a href="#about">About</a>
       <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#hobbies">Hobbies</a>
       <a href="#gallery">Gallery</a>
-      <!-- <a href="CS6302_M26.html">SSD Page</a> -->
+      <a href="CS6302_M26.html">SSD Page</a>
     </nav>
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2>Professional Summary</h2>
     <p>
-      Hi, I'm Hemakesh Reddy! I am currently studying Computer Science and I enjoy backend development and solving coding problems (solved 400+ on LeetCode).
+      A Software Engineer, with a strong foundation in Python, Flask, FastAPI and Data Structures and Algorithms.
+      Solved 400+ problems on LeetCode, demonstrating my problem solving skills.
+      Experience includes building web applications, integrating databases like SQLite and PostgreSQL,
+      and currently working on AI Agents and RAG.
     </p>
-    <p>
-      <strong>Email:</strong> hemakesh8333@gmail.com
+    <p class="contact">
+      <strong>GitHub:</strong> <a href="https://github.com/hemakesh-github" target="_blank">hemakesh-github</a>
+      |
+      <strong>Email:</strong> <a href="mailto:hemakesh8333@gmail.com">hemakesh8333@gmail.com</a>
+      |
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hemakesh-muppidi" target="_blank">hemakesh-muppidi</a>
+      |
       <strong>Phone:</strong> +91-8498081763
     </p>
   </section>
 
   <section id="education">
     <h2>Education</h2>
+    <h3>International Institute of Information Technology - Hyderabad</h3>
+    <p class="meta">M.Tech in Computer Science &amp; Engineering | Hyderabad, TS | 2026 – 2028</p>
+
+    <h3>Vasireddy Venkatadri Institute of Technology</h3>
+    <p class="meta">B.Tech in Computer Science &amp; Engineering (AI &amp; ML) | Guntur, AP | 2022 – 2026 | CGPA: 8.55</p>
+
+    <h3>FIITJEE - Vijayawada</h3>
+    <p class="meta">Intermediate (PCM) | Vijayawada, AP | 2020 – 2022 | 91.4%</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <h3>SSP 2000 Inc</h3>
+    <p class="meta">Web Development Intern | Jun 2025 – Nov 2025</p>
     <ul>
-      <li><strong>M.Tech in CSE:</strong> IIIT Hyderabad (2026 - 2028)</li>
-      <li><strong>B.Tech in CSE (AI &amp; ML):</strong> VVIT (CGPA: 8.55)</li>
-      <li><strong>Intermediate:</strong> FIITJEE (91.4%)</li>
+      <li>Built a full-stack Document Management System (DMS) using ReactJS and FastAPI, rendering a hierarchical tree structure (Project -&gt; Component -&gt; Sub-component) with PDF metadata at each node.</li>
+      <li>Implemented infinite scroll to progressively load large project trees, reducing initial page load time.</li>
+      <li>Designed role-based access control supporting multiple employee permission levels, alongside an admin panel for project and employee management.</li>
+      <li>Collaborated with the team through design and implementation cycles.</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Projects &amp; Work Experience</h2>
-    <h3>SSP 2000 Inc - Web Development Intern</h3>
-    <p>Worked with ReactJS and FastAPI to build a Document Management System.</p>
+    <h2>Projects</h2>
+    <h3>Digital Krishi Officer | <a href="https://github.com/hemakesh-github" target="_blank">Repository</a></h3>
+    <ul>
+      <li>Developed an AI crop advisory agent using Google ADK, equipped with tools for Qdrant-based RAG retrieval and district/crop-specific suggestion lookup, with structured output validation via a Pydantic schema.</li>
+      <li>Implemented RAG retrieval over 500+ agricultural queries indexed in Qdrant, with crop-name metadata filtering to scope vector search results.</li>
+      <li>Implemented Cross-Encoder reranking to improve the retrieval performance.</li>
+      <li>Designed an escalation pipeline that routes low-confidence agent responses to human experts, with bilingual (English/Telugu) response handling.</li>
+      <li>Implemented JWT + OTP-based authentication and a full REST API layer (routers for chat, weather, disease, expert, admin), backed by PostgreSQL via SQLModel.</li>
+    </ul>
 
-    <h3>Digital Krishi Officer</h3>
-    <p>An AI advisory project for farmers using Qdrant, Google ADK, and FastAPI.</p>
-
-    <h3>studentBuddy</h3>
-    <p>A multimodal doubt-solving app using LangChain and the Gemini API.</p>
+    <h3>studentBuddy | <a href="https://github.com/hemakesh-github" target="_blank">Repository</a></h3>
+    <ul>
+      <li>Engineered a multimodal doubt-solving endpoint accepting text, PDF context, and image uploads, routed through LangChain’s Gemini integration using base64-encoded image messages.</li>
+      <li>Implemented a document parsing pipeline (PyPDF2, python-docx) supporting PDF, DOCX, and TXT, chunked into sections for LLM context.</li>
+      <li>Generated structured MCQ quizzes from parsed document content using LangChain’s JsonOutputParser with Pydantic schema validation and retry logic on malformed LLM output.</li>
+      <li>Persisted users, doubts, and quiz history in PostgreSQL via SQLAlchemy ORM, with JWT-based auth.</li>
+    </ul>
   </section>
 
   <section id="skills">
-    <h2>Skills &amp; Interests</h2>
-    <p><strong>Technical Skills:</strong> Python, C, C++, FastAPI, Flask, PostgreSQL, RAG, LangChain</p>
-    <p><strong>Interests:</strong> Coding, building web apps, exploring AI models, learning new frameworks.</p>
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python, C, C++</li>
+      <li><strong>Databases:</strong> PostgreSQL, SQLite, Qdrant</li>
+      <li><strong>Web:</strong> FastAPI, Flask</li>
+      <li><strong>AI:</strong> RAG, LangChain, Gemini API, Vector Databases</li>
+      <li><strong>Tools:</strong> Git, GitHub</li>
+      <li><strong>Problem Solving:</strong> Data Structures &amp; Algorithms (400+ LeetCode problems)</li>
+    </ul>
+  </section>
+
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Explore tech</li>
+      <li>Watch movies</li>
+      <li>Watch series</li>
+    </ul>
   </section>
 
   <section id="gallery">
@@ -129,7 +193,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Muppidi Hemakesh Reddy. Built for SSD Assignment.</p>
+    <p>&copy; 2026 M. Hemakesh Reddy. Built for SSD Assignment.</p>
   </footer>
 
 </body>
